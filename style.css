@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+:root {
+    --Orange: hsl(25, 97%, 53%);
+    --white: hsl(0, 0%, 100%);
+    --veryDarkBlue: hsl(228, 11%, 9%);
+    --darkBlue: hsl(213, 19%, 18%);
+    --darkGray: hsla(216, 12%, 54%, 0.185);
+    --mediumGrey: hsl(216, 12%, 54%);
+    --lightGrey: hsl(217, 12%, 63%);
+}
+
+* {
+    border: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Overpass', sans-serif;
+}
+
+.star--icon {
+    width: 52px;
+    height: 53px;
+    background: url(./images/icon-star.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: hsla(216, 12%, 54%, 0.185);
+    border-radius: 50%;
+    padding: 1rem;
+}
+
+.btn.active {
+    background-color: var(--lightGrey);
+    color: var(--white);
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--veryDarkBlue);
+}
+
+@media screen and (min-width: 0px) {
+
+    .container {
+        width: 90%;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+        background-color: var(--darkBlue);
+        background: linear-gradient(180deg, rgba(33, 40, 49, 1) 21%, rgba(28, 35, 45, 1) 49%, rgba(23, 30, 40, 1) 72%);
+        border-radius: 20px;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        transition: opacity 0.5s ease-out;
+    }
+
+    .container__header {
+        color: var(--white);
+    }
+
+    .container__paragraph {
+        color: var(--mediumGrey);
+        font-size: 15px;
+    }
+
+    .container__btn {
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+    }
+
+    .btn {
+        flex-grow: 1;
+        background-color: hsla(216, 12%, 54%, 0.185);
+        border-radius: 50%;
+        color: var(--mediumGrey);
+        font-weight: 700;
+        font-size: 15px;
+        width: 52px;
+        height: 53px;
+    }
+
+    .btn:hover {
+        color: var(--white);
+        background-color: var(--Orange);
+        cursor: pointer;
+    }
+
+    .container--btn-submit {
+        padding: .65rem 2.5rem;
+        background-color: var(--Orange);
+        color: var(--white);
+        font-weight: 700;
+        border-radius: 30px;
+        letter-spacing: 3px;
+        cursor: pointer;
+        transition: .3s ease;
+    }
+
+    .container--btn-submit:hover {
+        color: var(--Orange);
+        background-color: var(--white);
+    }
+
+    /* Thank you state */
+
+    .container-state {
+        width: 90%;
+        background-color: var(--darkBlue);
+        background: linear-gradient(180deg, rgba(33, 40, 49, 1) 21%, rgba(28, 35, 45, 1) 49%, rgba(23, 30, 40, 1) 72%);
+        border-radius: 20px;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        position: absolute;
+        opacity: 0;
+        transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+    }
+
+    .container-state.show {
+        opacity: 1;
+    }
+
+    .container-state--icon {
+        width: 170px;
+        height: 110px;
+        background: url(./images/illustration-thank-you.svg);
+        background-repeat: no-repeat;
+    }
+
+    .container-state__rating {
+        background-color: var(--darkBlue);
+        padding: .45rem .85rem;
+        border-radius: 20px;
+        color: var(--Orange);
+    }
+
+    .container-state__heading {
+        color: var(--white);
+    }
+
+    .container-state__paragraph {
+        color: var(--mediumGrey);
+        text-align: center;
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 725px) {
+
+    .container,
+    .container-state {
+        width: 385px;
+    }
+}
